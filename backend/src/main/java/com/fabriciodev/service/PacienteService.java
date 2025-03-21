@@ -2,7 +2,6 @@ package com.fabriciodev.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.fabriciodev.ClinicaApplication;
 import com.fabriciodev.model.Paciente;
 import com.fabriciodev.repository.PacienteRepository;
 import java.util.List;
@@ -11,14 +10,8 @@ import java.util.Optional;
 @Service
 public class PacienteService {
 
-    private final ClinicaApplication clinicaApplication;
-
     @Autowired
     private PacienteRepository pacienteRepository;
-
-    PacienteService(ClinicaApplication clinicaApplication) {
-        this.clinicaApplication = clinicaApplication;
-    }
 
     public List<Paciente> listarTodos() {
         return pacienteRepository.findAll();
