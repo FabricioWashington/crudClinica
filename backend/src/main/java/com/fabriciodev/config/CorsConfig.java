@@ -10,7 +10,10 @@
 // @Override
 // public void addCorsMappings(CorsRegistry registry) {
 // registry.addMapping("/**")
-// .allowedOriginPatterns("https://*.vercel.app")
+// .allowedOriginPatterns(
+// "https://crud-clinica-frontend-hiiwfflfz-fabriciowashingtons-projects.vercel.app",
+// "https://crud-clinica-frontend-git-main-fabriciowashingtons-projects.vercel.app",
+// "http://localhost:4200")
 // .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
 // .allowedHeaders("*")
 // .allowCredentials(true);

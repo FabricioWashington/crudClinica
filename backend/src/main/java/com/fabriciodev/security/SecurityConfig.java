@@ -26,7 +26,6 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/**").permitAll()
                         .anyRequest().permitAll())
                 .build();
     }
@@ -45,9 +44,10 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.setAllowedOrigins(List.of(
-                "https://crud-clinica-frontend-hiiwfflfz-fabriciowashingtons-projects.vercel.app", // produção
-                "http://localhost:4200" // desenvolvimento local
+        config.setAllowedOriginPatterns(List.of(
+                "https://crud-clinica-frontend-git-main-fabriciowashingtons-projects.vercel.app", // Vercel - Git branch
+                "https://crud-clinica-frontend-hiiwfflfz-fabriciowashingtons-projects.vercel.app", // Vercel - produção
+                "http://localhost:4200" // Desenvolvimento local
         ));
         config.setAllowedHeaders(List.of("Origin", "Content-Type", "Accept", "Authorization"));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
