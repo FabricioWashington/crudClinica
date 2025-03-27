@@ -45,6 +45,7 @@ public class SecurityConfig {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
         config.setAllowedOriginPatterns(List.of(
+                "https://crud-clinica-frontend.vercel.app", // Vercel - prod
                 "https://crud-clinica-frontend-git-main-fabriciowashingtons-projects.vercel.app", // Vercel - Git branch
                 "https://crud-clinica-frontend-hiiwfflfz-fabriciowashingtons-projects.vercel.app", // Vercel - produção
                 "http://localhost:4200" // Desenvolvimento local
