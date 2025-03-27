@@ -8,4 +8,5 @@ import lombok.Data;
 public class MedicoDTO {
     private Integer id;
     private String nome;
+    private String especialidade;
 }

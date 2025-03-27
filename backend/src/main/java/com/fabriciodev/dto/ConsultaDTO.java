@@ -20,8 +20,10 @@ public class ConsultaDTO {
     public static ConsultaDTO fromEntity(Consulta consulta) {
         return new ConsultaDTO(
                 consulta.getId(),
-                new PacienteDTO(consulta.getPaciente().getId(), consulta.getPaciente().getNome()),
-                new MedicoDTO(consulta.getMedico().getId(), consulta.getMedico().getNome()),
+                new PacienteDTO(consulta.getPaciente().getId(), consulta.getPaciente().getNome(),
+                        consulta.getPaciente().getCpf(), consulta.getPaciente().getEmail()),
+                new MedicoDTO(consulta.getMedico().getId(), consulta.getMedico().getNome(),
+                        consulta.getMedico().getEspecialidade()),
                 consulta.getDataConsulta(),
                 consulta.getStatus());
     }
